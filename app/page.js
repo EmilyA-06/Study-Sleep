@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { supabase } from '../lib/supabase'
 
 export default function HomePage() {
   return (
@@ -231,8 +232,9 @@ function PricingSection() {
   const [email, setEmail] = useState('')
   const [clicked, setClicked] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    await supabase.from('signups').insert({ email })
     setClicked(true)
   }
 
@@ -332,14 +334,13 @@ function SignupSection() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!name || !email) return
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 900)
+    await supabase.from('signups').insert({ name, email })
+    setLoading(false)
+    setSubmitted(true)
   }
 
   return (
