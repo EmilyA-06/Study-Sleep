@@ -30,6 +30,7 @@ function Hero() {
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
           <span className="badge">AI-Powered</span>
           <span className="badge">Built for College Students</span>
+          <span className="badge" style={{ background: 'rgba(79,195,195,0.1)', borderColor: 'rgba(79,195,195,0.25)', color: 'var(--accent2)' }}>Now Live</span>
           <span className="point-chip">⭐ Earn Sleep Points</span>
         </div>
 
@@ -61,7 +62,7 @@ function Hero() {
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="/#signup" className="btn-primary">
-            Get Early Access →
+            Sign Up Free →
           </a>
           <a href="/how-it-works" className="btn-outline">
             See How It Works
@@ -343,10 +344,10 @@ function SignupSection() {
 
   return (
     <div id="signup" className="section" style={{ textAlign: 'center' }}>
-      <p className="section-label" style={{ textAlign: 'center' }}>Early Access</p>
-      <h2 className="section-title" style={{ textAlign: 'center' }}>Be the first to sleep better</h2>
+      <p className="section-label" style={{ textAlign: 'center' }}>Get Started</p>
+      <h2 className="section-title" style={{ textAlign: 'center' }}>Create your free account</h2>
       <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '480px', margin: '0 auto 3rem' }}>
-        Study Sleep is launching soon. Join the waitlist and get early access + 100 bonus StudyPoints when you sign up.
+        Sign up with your college email and get 100 bonus StudyPoints on your first login.
       </p>
 
       {submitted ? (
@@ -360,13 +361,12 @@ function SignupSection() {
         }}>
           <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌙</div>
           <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: '1.4rem', marginBottom: '0.5rem' }}>
-            You're on the list, {name.split(' ')[0]}!
+            Welcome, {name.split(' ')[0]}!
           </h3>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            We'll email you at <strong style={{ color: 'var(--accent2)' }}>{email}</strong> when Study Sleep launches.
-            Your 100 bonus StudyPoints are waiting.
+            Your account has been created. We sent a confirmation to <strong style={{ color: 'var(--accent2)' }}>{email}</strong>.
           </p>
-          <div className="point-chip" style={{ marginTop: '1.5rem', justifyContent: 'center' }}>⭐ +100 StudyPoints Reserved</div>
+          <div className="point-chip" style={{ marginTop: '1.5rem', justifyContent: 'center' }}>⭐ +100 StudyPoints Added</div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} style={{
@@ -401,7 +401,7 @@ function SignupSection() {
             />
           </div>
           <button type="submit" className="btn-primary" disabled={loading} style={{ justifyContent: 'center' }}>
-            {loading ? 'Saving your spot...' : 'Join the Waitlist — It\'s Free'}
+            {loading ? 'Creating your account...' : 'Create Free Account'}
           </button>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center' }}>
             No spam, ever. Unsubscribe anytime.

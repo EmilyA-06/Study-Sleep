@@ -271,7 +271,7 @@ function CTASection() {
         <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem' }}>
           Join hundreds of students already on the waitlist.
         </p>
-        <a href="/#signup" className="btn-primary">Get Early Access →</a>
+        <a href="/#signup" className="btn-primary">Sign Up Free →</a>
       </div>
     </div>
   )

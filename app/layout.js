@@ -62,7 +62,7 @@ function NavBar() {
         <li><a href="/about">About</a></li>
         <li><a href="/how-it-works">How It Works</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/#signup" className="nav-cta">Get Early Access</a></li>
+        <li><a href="/#signup" className="nav-cta">Sign Up Free</a></li>
       </ul>
     </nav>
   )
