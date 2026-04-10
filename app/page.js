@@ -8,6 +8,7 @@ export default function HomePage() {
       <ValueProps />
       <HowItWorksPreview />
       <PointsSystem />
+      <PricingSection />
       <SignupSection />
     </>
   )
@@ -27,8 +28,8 @@ function Hero() {
     }}>
       <div style={{ maxWidth: '700px' }}>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
-          <span className="badge">✨ AI-Powered</span>
-          <span className="badge">🎓 Built for College Students</span>
+          <span className="badge">AI-Powered</span>
+          <span className="badge">Built for College Students</span>
           <span className="point-chip">⭐ Earn Sleep Points</span>
         </div>
 
@@ -85,12 +86,12 @@ function Hero() {
 function ValueProps() {
   const features = [
     {
-      icon: '🤖',
+      icon: '💡',
       title: 'AI-Personalized Tips',
       desc: 'After each sleep log, our AI analyzes your patterns and delivers suggestions tailored to your exact schedule and habits.',
     },
     {
-      icon: '📊',
+      icon: '☀️',
       title: 'Smart Sleep Tracking',
       desc: 'Answer a few quick questions each morning. We track bedtime, wake time, quality, and stress to build your sleep profile.',
     },
@@ -100,12 +101,12 @@ function ValueProps() {
       desc: 'Log your sleep, earn StudyPoints. Redeem them for premium AI insights, sleep challenges, and exclusive tips.',
     },
     {
-      icon: '🎓',
+      icon: '🎒',
       title: 'Built for College Life',
       desc: 'Late-night study sessions, early lectures, irregular schedules — we get it. Study Sleep works with your college reality.',
     },
     {
-      icon: '📈',
+      icon: '📅',
       title: 'Track Your Progress',
       desc: 'Visual dashboards show your weekly sleep trends so you can actually see yourself improving over time.',
     },
@@ -158,7 +159,7 @@ function HowItWorksPreview() {
         No complicated onboarding. No wearables required. Just your phone and two minutes a day.
       </p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        {steps.map((s, i) => (
+        {steps.map((s) => (
           <div key={s.n} style={{
             display: 'flex',
             alignItems: 'center',
@@ -193,8 +194,8 @@ function HowItWorksPreview() {
 function PointsSystem() {
   const tiers = [
     { name: 'Night Owl', pts: '0 – 99 pts', color: '#8890b5', icon: '🦉', perks: 'Daily sleep logging, basic streak tracking' },
-    { name: 'Dream Chaser', pts: '100 – 299 pts', color: 'var(--accent2)', icon: '💫', perks: '+ Weekly pattern analysis, sleep score history' },
-    { name: 'Sleep Scholar', pts: '300 – 699 pts', color: 'var(--accent)', icon: '🌙', perks: '+ AI personalized tips, custom sleep goals' },
+    { name: 'Dream Chaser', pts: '100 – 299 pts', color: 'var(--accent2)', icon: '🌙', perks: '+ Weekly pattern analysis, sleep score history' },
+    { name: 'Sleep Scholar', pts: '300 – 699 pts', color: 'var(--accent)', icon: '📖', perks: '+ AI personalized tips, custom sleep goals' },
     { name: 'Rest Master', pts: '700+ pts', color: 'var(--accent3)', icon: '👑', perks: '+ Full AI coaching, priority new features' },
   ]
 
@@ -219,6 +220,105 @@ function PointsSystem() {
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>{t.perks}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PricingSection() {
+  const [email, setEmail] = useState('')
+  const [clicked, setClicked] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setClicked(true)
+  }
+
+  return (
+    <div className="section" style={{ textAlign: 'center' }}>
+      <p className="section-label" style={{ textAlign: 'center' }}>Pricing</p>
+      <h2 className="section-title" style={{ textAlign: 'center' }}>Simple, affordable access</h2>
+      <p className="section-sub" style={{ margin: '0 auto 3.5rem', textAlign: 'center' }}>
+        One plan. Everything included. Cancel anytime.
+      </p>
+
+      <div style={{
+        maxWidth: '420px',
+        margin: '0 auto',
+        background: 'var(--surface)',
+        border: '1px solid var(--border)',
+        borderRadius: '24px',
+        overflow: 'hidden',
+      }}>
+        {/* Plan header */}
+        <div style={{
+          background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+          padding: '2.5rem 2rem',
+          textAlign: 'center',
+        }}>
+          <p style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.75rem', opacity: 0.85 }}>
+            Study Sleep Pro
+          </p>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '0.25rem' }}>
+            <span style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '0.5rem' }}>$</span>
+            <span style={{ fontFamily: 'Syne, sans-serif', fontSize: '5rem', fontWeight: 800, lineHeight: 1 }}>5</span>
+            <span style={{ fontSize: '1rem', opacity: 0.8, alignSelf: 'flex-end', marginBottom: '0.75rem' }}>/month</span>
+          </div>
+          <p style={{ opacity: 0.85, fontSize: '0.9rem', marginTop: '0.5rem' }}>Everything you need to sleep better</p>
+        </div>
+
+        {/* Features list */}
+        <div style={{ padding: '2rem' }}>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.9rem', marginBottom: '2rem', textAlign: 'left' }}>
+            {[
+              'Daily sleep logging',
+              'Full AI-personalized tips',
+              'Weekly pattern analysis',
+              'StudyPoints & rewards',
+              'Custom sleep goals',
+              'Priority access to new features',
+            ].map(item => (
+              <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-muted)' }}>
+                <span style={{ color: 'var(--accent2)', fontWeight: 700, fontSize: '1rem' }}>✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          {clicked ? (
+            <div style={{
+              background: 'rgba(124, 106, 247, 0.08)',
+              border: '1px solid rgba(124, 106, 247, 0.2)',
+              borderRadius: '14px',
+              padding: '1.25rem',
+              textAlign: 'center',
+            }}>
+              <p style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, marginBottom: '0.4rem' }}>Coming soon!</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                Payments aren't live yet — join the waitlist below to be first in line.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div className="form-group">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className="btn-primary" style={{ justifyContent: 'center' }}>
+                Get Started for $5/mo
+              </button>
+            </form>
+          )}
+
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem' }}>
+            No contracts. Cancel anytime.
+          </p>
         </div>
       </div>
     </div>
@@ -263,7 +363,7 @@ function SignupSection() {
             You're on the list, {name.split(' ')[0]}!
           </h3>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            We'll email you at <strong style={{ color: 'var(--accent2)' }}>{email}</strong> when Study Sleep launches. 
+            We'll email you at <strong style={{ color: 'var(--accent2)' }}>{email}</strong> when Study Sleep launches.
             Your 100 bonus StudyPoints are waiting.
           </p>
           <div className="point-chip" style={{ marginTop: '1.5rem', justifyContent: 'center' }}>⭐ +100 StudyPoints Reserved</div>
@@ -301,7 +401,7 @@ function SignupSection() {
             />
           </div>
           <button type="submit" className="btn-primary" disabled={loading} style={{ justifyContent: 'center' }}>
-            {loading ? 'Saving your spot...' : '🌙 Join the Waitlist — It\'s Free'}
+            {loading ? 'Saving your spot...' : 'Join the Waitlist — It\'s Free'}
           </button>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center' }}>
             No spam, ever. Unsubscribe anytime.

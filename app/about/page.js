@@ -40,7 +40,7 @@ function FounderSection() {
           </div>
 
           <div>
-            <div className="badge" style={{ marginBottom: '1.5rem' }}>👋 Meet the Founder</div>
+            <div className="badge" style={{ marginBottom: '1.5rem' }}>Meet the Founder</div>
             <h2 style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: '2rem', lineHeight: 1.15, marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
               Hi, I'm Emily Azarian
             </h2>
@@ -56,9 +56,9 @@ function FounderSection() {
               It combines simple daily logging, AI-backed recommendations, and reward habits to help you study better rested.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <span className="badge">🎓 Penn State</span>
-              <span className="badge">🧠 Focused Student</span>
-              <span className="badge">🌙 Reformed Night Owl</span>
+              <span className="badge">Penn State</span>
+              <span className="badge">Focused Student</span>
+              <span className="badge">Reformed Night Owl</span>
             </div>
           </div>
         </div>

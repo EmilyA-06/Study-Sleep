@@ -190,7 +190,7 @@ function InteractiveDemo() {
                   marginBottom: '1.5rem',
                   textAlign: 'left',
                 }}>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '0.4rem', letterSpacing: '0.05em' }}>🤖 AI INSIGHT (PREVIEW)</p>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '0.4rem', letterSpacing: '0.05em' }}>💡 AI INSIGHT (PREVIEW)</p>
                   <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                     {getInsight().msg}
                   </p>
@@ -213,12 +213,12 @@ function InteractiveDemo() {
 function AISection() {
   const features = [
     {
-      icon: '🧠',
+      icon: '🔍',
       title: 'Pattern Detection',
       desc: 'The AI identifies your personal sleep patterns — whether you sleep better after exercise, on less-stressful days, or in certain environments.',
     },
     {
-      icon: '📅',
+      icon: '🗓️',
       title: 'Schedule-Aware',
       desc: 'It factors in your class schedule and exam weeks to give recommendations that actually fit your calendar.',
     },
@@ -228,7 +228,7 @@ function AISection() {
       desc: 'Set a sleep goal (more energy, better focus, falling asleep faster) and the AI works backward to create your custom plan.',
     },
     {
-      icon: '📈',
+      icon: '📊',
       title: 'Improves Over Time',
       desc: 'The more you log, the smarter it gets. After 2 weeks, suggestions are highly personalized to your unique sleep biology.',
     },
